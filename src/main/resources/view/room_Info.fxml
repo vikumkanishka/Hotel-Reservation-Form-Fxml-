@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="549.0" prefWidth="834.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.RoomInfoFormController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="90.0" layoutY="-2.0" stroke="#ffffff00" strokeType="INSIDE" width="843.0" />
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="282.0" layoutY="20.0" prefHeight="30.0" prefWidth="310.0" text="Room Information">
+         <font>
+            <Font name="System Bold" size="31.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tblRoomInfo" layoutX="6.0" layoutY="101.0" prefHeight="402.0" prefWidth="830.0">
+        <columns>
+          <TableColumn fx:id="colRoomId" prefWidth="75.0" text="Room Id" />
+          <TableColumn fx:id="colRoomType" prefWidth="105.60001373291016" text="Type" />
+            <TableColumn fx:id="colPricePerNight" prefWidth="114.4000244140625" text="Price Per Night" />
+            <TableColumn fx:id="colMaxGuests" prefWidth="79.20001220703125" text="Max Guests" />
+            <TableColumn fx:id="colAvailability" prefWidth="88.79998779296875" text="Availability" />
+            <TableColumn fx:id="colDescription" prefWidth="316.0000305175781" text="Description" />
+            <TableColumn fx:id="colFloor" prefWidth="56.0" text="Floor" />
+        </columns>
+      </TableView>
+      <JFXButton layoutX="702.0" layoutY="511.0" onAction="#btnReloadOnAction" prefHeight="26.0" prefWidth="127.0" text="Reload" />
+   </children>
+</AnchorPane>
