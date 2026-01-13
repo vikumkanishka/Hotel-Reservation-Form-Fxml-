@@ -1,2 +1,4 @@
+controller\RoomInfoFormController.class
 Main.class
 Starter.class
+model\dto\RoomInfoDTO.class

@@ -1,12 +1,12 @@
 package controller;
 
+import com.jfoenix.controls.JFXButton;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import model.dto.RoomInfoDTO;
 
@@ -19,6 +19,18 @@ import java.util.ResourceBundle;
 
 public class RoomInfoFormController implements Initializable {
 
+    public TextField txtRoomID;
+    public ComboBox cmbType;
+    public TextField txtPricePerNight;
+    public JFXButton btnUpdate;
+    public JFXButton btnDelete;
+    public JFXButton btnAdd;
+    public ComboBox cmbFloor;
+    public ComboBox cmbMaxGuests;
+    public Label lblAvailability;
+    public RadioButton radioAvailable;
+    public RadioButton radioUnavailable;
+    public TextArea txtDescription;
     @FXML
     private TableColumn<?, ?> colAvailability;
 
@@ -50,6 +62,22 @@ public class RoomInfoFormController implements Initializable {
 
         loadDetails();
 
+    }
+
+
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        loadDetails();
+    }
+
+    public void btnUpdateOnAction(ActionEvent actionEvent) {
+    }
+
+    public void btnDeleteOnAction(ActionEvent actionEvent) {
+    }
+
+    public void btnAddOnAction(ActionEvent actionEvent) {
     }
 
     private void loadDetails(){
@@ -88,11 +116,5 @@ public class RoomInfoFormController implements Initializable {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-    }
-
-
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        loadDetails();
     }
 }
