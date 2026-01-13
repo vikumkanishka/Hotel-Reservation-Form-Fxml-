@@ -69,6 +69,15 @@ public class RoomInfoFormController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         loadDetails();
+
+        ObservableList <String> types= FXCollections.observableArrayList("Single","Double","Family","Suite");
+        cmbType.setItems(types);
+
+        ObservableList maxGuests= FXCollections.observableArrayList("1","2","3","4","5");
+        cmbMaxGuests.setItems(maxGuests);
+
+        ObservableList floors= FXCollections.observableArrayList("1","2","3","4","5","6");
+        cmbFloor.setItems(floors);
     }
 
     public void btnUpdateOnAction(ActionEvent actionEvent) {
