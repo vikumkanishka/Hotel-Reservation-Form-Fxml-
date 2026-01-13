@@ -78,6 +78,10 @@ public class RoomInfoFormController implements Initializable {
 
         ObservableList floors= FXCollections.observableArrayList("1","2","3","4","5","6");
         cmbFloor.setItems(floors);
+
+        ToggleGroup toggleGroup = new ToggleGroup();
+        radioAvailable.setToggleGroup(toggleGroup);
+        radioUnavailable.setToggleGroup(toggleGroup);
     }
 
     public void btnUpdateOnAction(ActionEvent actionEvent) {
