@@ -11,10 +11,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import model.dto.RoomInfoDTO;
 
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ResourceBundle;
 
 public class RoomInfoFormController implements Initializable {
@@ -57,9 +54,13 @@ public class RoomInfoFormController implements Initializable {
 
     ObservableList <RoomInfoDTO> observableList = FXCollections.observableArrayList();
 
+    RoomController roomController = new RoomController();
+
     @FXML
     void btnReloadOnAction(ActionEvent event) {
 
+
+        tblRoomInfo.setItems(observableList);
         loadDetails();
 
     }
@@ -68,6 +69,7 @@ public class RoomInfoFormController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
         loadDetails();
 
         ObservableList <String> types= FXCollections.observableArrayList("Single","Double","Family","Suite");
@@ -82,52 +84,78 @@ public class RoomInfoFormController implements Initializable {
         ToggleGroup toggleGroup = new ToggleGroup();
         radioAvailable.setToggleGroup(toggleGroup);
         radioUnavailable.setToggleGroup(toggleGroup);
+
+
+        colRoomId.setCellValueFactory(new PropertyValueFactory<>("roomId"));
+        colRoomType.setCellValueFactory(new PropertyValueFactory<>("roomType"));
+        colDescription.setCellValueFactory(new PropertyValueFactory<>("description"));
+        colPricePerNight.setCellValueFactory(new PropertyValueFactory<>("pricePerNight"));
+        colMaxGuests.setCellValueFactory(new PropertyValueFactory<>("maxGuests"));
+        colFloor.setCellValueFactory(new PropertyValueFactory<>("floor"));
+        colAvailability.setCellValueFactory(new PropertyValueFactory<>("availability"));
+
+
     }
 
     public void btnUpdateOnAction(ActionEvent actionEvent) {
+
+        try {
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/hotel_reservation_system","root","1234");
+
+            PreparedStatement preparedStatement = connection.prepareStatement("UPDATE rooms SET type = ?, price_per_night = ?, max_guests = ?, availability = ?, description = ?, floor = ? WHERE room_id = ?");
+
+            preparedStatement.setObject(1,cmbType.getValue());
+            preparedStatement.setObject(2,Double.parseDouble(txtPricePerNight.getText()));
+            preparedStatement.setObject(3,cmbMaxGuests.getValue());
+            preparedStatement.setObject(4,radioAvailable.isSelected());
+            preparedStatement.setObject(5,txtDescription.getText());
+            preparedStatement.setObject(6,cmbFloor.getValue());
+            preparedStatement.setObject(7,txtRoomID.getText());
+
+            preparedStatement.executeUpdate();
+            loadDetails();
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public void btnDeleteOnAction(ActionEvent actionEvent) {
-    }
-
-    public void btnAddOnAction(ActionEvent actionEvent) {
-    }
-
-    private void loadDetails(){
         try {
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/hotel_reservation_system","root","200004602360");
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/hotel_reservation_system","root","1234");
 
-            ResultSet resultSet = connection.prepareStatement("SELECT * FROM rooms").executeQuery();
+            PreparedStatement preparedStatement = connection.prepareStatement("DELETE FROM rooms WHERE room_id = ? ");
 
-            observableList.clear();
+            preparedStatement.setObject(1,txtRoomID.getText());
+            preparedStatement.executeUpdate();
+            loadDetails();
 
-            while (resultSet.next()){
-                String roomId = resultSet.getString("room_Id");
-                String roomType = resultSet.getString("type");
-                String description = resultSet.getString("description");
-                double pricePerNight = resultSet.getDouble("price_Per_Night");
-                int maxGuests = resultSet.getInt("max_Guests");
-                int floor = resultSet.getInt("floor");
-                boolean availability = resultSet.getBoolean("availability");
-
-                RoomInfoDTO roomInfoDTO = new RoomInfoDTO(roomId,roomType,description,pricePerNight,maxGuests,floor,availability);
-
-                observableList.add(roomInfoDTO);
-            }
-
-            colRoomId.setCellValueFactory(new PropertyValueFactory<>("roomId"));
-            colRoomType.setCellValueFactory(new PropertyValueFactory<>("roomType"));
-            colDescription.setCellValueFactory(new PropertyValueFactory<>("description"));
-            colPricePerNight.setCellValueFactory(new PropertyValueFactory<>("pricePerNight"));
-            colMaxGuests.setCellValueFactory(new PropertyValueFactory<>("maxGuests"));
-            colFloor.setCellValueFactory(new PropertyValueFactory<>("floor"));
-            colAvailability.setCellValueFactory(new PropertyValueFactory<>("availability"));
-
-            tblRoomInfo.setItems(observableList);
 
 
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public void btnAddOnAction(ActionEvent actionEvent) {
+        observableList.clear();
+
+        String roomId = txtRoomID.getText();
+        String roomType = String.valueOf(cmbType.getValue());
+        String description = txtDescription.getText();
+        double pricePerNight = Double.parseDouble(txtPricePerNight.getText());
+        int maxGuests = Integer.parseInt(String.valueOf(cmbMaxGuests.getValue()));
+        int floor = Integer.parseInt(String.valueOf(cmbFloor.getValue()));
+        boolean availability = radioAvailable.isSelected();
+
+
+        roomController.AddRoomDetails(roomId,roomType,description,pricePerNight,maxGuests,floor,availability);
+
+        
+    }
+
+    private void loadDetails(){
+        observableList = roomController.getAllRooms();
+        tblRoomInfo.setItems(roomController.getAllRooms());
     }
 }
