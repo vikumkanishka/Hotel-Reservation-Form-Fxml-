@@ -2,7 +2,6 @@ package controller;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.scene.control.cell.PropertyValueFactory;
 import model.dto.RoomInfoDTO;
 
 import java.sql.*;
@@ -40,7 +39,7 @@ public class RoomController {
             throw new RuntimeException(e);
         }
     }
-    public void AddRoomDetails(String roomId, String roomType, String description, double pricePerNight, int maxGuests, int floor, boolean availability) {
+    public void addRoomDetails(String roomId, String roomType, String description, double pricePerNight, int maxGuests, int floor, boolean availability) {
         try {
             Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/hotel_reservation_system","root","200004602360");
 
@@ -61,5 +60,41 @@ public class RoomController {
             throw new RuntimeException(e);
         }
     }
+    public void deleteRoom(String roomId) {
 
+        try {
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/hotel_reservation_system", "root", "1234");
+
+            PreparedStatement preparedStatement = connection.prepareStatement("DELETE FROM rooms WHERE room_id = ? ");
+
+            preparedStatement.setObject(1, roomId);
+            preparedStatement.executeUpdate();
+
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
+
+    public void updateRoom(String roomId, String roomType, String description, double pricePerNight, int maxGuests, int floor, boolean availability) {
+        try {
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/hotel_reservation_system", "root", "200004602360");
+
+            PreparedStatement preparedStatement = connection.prepareStatement("UPDATE rooms SET type = ?, price_per_night = ?, max_guests = ?, availability = ?, description = ?, floor = ? WHERE room_id = ?");
+
+
+            preparedStatement.setObject(1,roomType);
+            preparedStatement.setObject(5,description);
+            preparedStatement.setObject(2,pricePerNight);
+            preparedStatement.setObject(3,maxGuests);
+            preparedStatement.setObject(6,floor);
+            preparedStatement.setObject(4,availability);
+            preparedStatement.setObject(7,roomId);
+
+            preparedStatement.executeUpdate();
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+}

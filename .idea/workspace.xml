@@ -4,11 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0eb7261e-9c75-4742-b496-ac9a946c1487" name="Changes" comment="Update workspace.xml to reflect recent changes in RoomInfoFormController and task management">
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/RoomController.java" afterDir="false" />
+    <list default="true" id="0eb7261e-9c75-4742-b496-ac9a946c1487" name="Changes" comment="Implement RoomController and enhance RoomInfoFormController with CRUD operations for room management">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/RoomController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/RoomController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/RoomInfoFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/RoomInfoFormController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/RoomInfoFormController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/RoomInfoFormController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/dto/RoomInfoDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/dto/RoomInfoDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/dto/RoomInfoDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/dto/RoomInfoDTO.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +94,7 @@
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings"
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -174,7 +176,15 @@
       <option name="project" value="LOCAL" />
       <updated>1768363838792</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Implement RoomController and enhance RoomInfoFormController with CRUD operations for room management">
+      <option name="closed" value="true" />
+      <created>1768366256087</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1768366256087</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -183,7 +193,8 @@
     <MESSAGE value="add data to comboBox from the ObserverbleList" />
     <MESSAGE value="Add radio button toggle group to RoomInfoFormController" />
     <MESSAGE value="Update workspace.xml to reflect recent changes in RoomInfoFormController and task management" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update workspace.xml to reflect recent changes in RoomInfoFormController and task management" />
+    <MESSAGE value="Implement RoomController and enhance RoomInfoFormController with CRUD operations for room management" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implement RoomController and enhance RoomInfoFormController with CRUD operations for room management" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>

@@ -54,7 +54,7 @@ public class RoomInfoFormController implements Initializable {
 
     ObservableList <RoomInfoDTO> observableList = FXCollections.observableArrayList();
 
-    RoomController roomController = new RoomController();
+    RoomController roomController  = new RoomController();
 
     @FXML
     void btnReloadOnAction(ActionEvent event) {
@@ -98,43 +98,21 @@ public class RoomInfoFormController implements Initializable {
     }
 
     public void btnUpdateOnAction(ActionEvent actionEvent) {
+        String roomId = txtRoomID.getText();
+        String roomType = String.valueOf(cmbType.getValue());
+        String description = txtDescription.getText();
+        double pricePerNight = Double.parseDouble(txtPricePerNight.getText());
+        int maxGuests = Integer.parseInt(String.valueOf(cmbMaxGuests.getValue()));
+        int floor = Integer.parseInt(String.valueOf(cmbFloor.getValue()));
+        boolean availability = radioAvailable.isSelected();
 
-        try {
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/hotel_reservation_system","root","1234");
+        roomController.updateRoom(roomId,roomType,description,pricePerNight,maxGuests,floor,availability);
+        loadDetails();
 
-            PreparedStatement preparedStatement = connection.prepareStatement("UPDATE rooms SET type = ?, price_per_night = ?, max_guests = ?, availability = ?, description = ?, floor = ? WHERE room_id = ?");
-
-            preparedStatement.setObject(1,cmbType.getValue());
-            preparedStatement.setObject(2,Double.parseDouble(txtPricePerNight.getText()));
-            preparedStatement.setObject(3,cmbMaxGuests.getValue());
-            preparedStatement.setObject(4,radioAvailable.isSelected());
-            preparedStatement.setObject(5,txtDescription.getText());
-            preparedStatement.setObject(6,cmbFloor.getValue());
-            preparedStatement.setObject(7,txtRoomID.getText());
-
-            preparedStatement.executeUpdate();
-            loadDetails();
-
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
     }
 
     public void btnDeleteOnAction(ActionEvent actionEvent) {
-        try {
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/hotel_reservation_system","root","1234");
-
-            PreparedStatement preparedStatement = connection.prepareStatement("DELETE FROM rooms WHERE room_id = ? ");
-
-            preparedStatement.setObject(1,txtRoomID.getText());
-            preparedStatement.executeUpdate();
-            loadDetails();
-
-
-
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+        roomController.deleteRoom(txtRoomID.getText());
     }
 
     public void btnAddOnAction(ActionEvent actionEvent) {
@@ -148,10 +126,7 @@ public class RoomInfoFormController implements Initializable {
         int floor = Integer.parseInt(String.valueOf(cmbFloor.getValue()));
         boolean availability = radioAvailable.isSelected();
 
-
-        roomController.AddRoomDetails(roomId,roomType,description,pricePerNight,maxGuests,floor,availability);
-
-        
+        roomController.addRoomDetails(roomId,roomType,description,pricePerNight,maxGuests,floor,availability);
     }
 
     private void loadDetails(){
