@@ -5,12 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0eb7261e-9c75-4742-b496-ac9a946c1487" name="Changes" comment="Implement RoomController and enhance RoomInfoFormController with CRUD operations for room management">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/controller/CustomerController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/controller/CustomerInfoFormController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/controller/CustomerInfoService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/controller/RoomInfoService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/model/dto/CustomerInfoDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/view/customer_Info.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Starter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Starter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/RoomController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/RoomController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/RoomInfoFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/RoomInfoFormController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/dto/RoomInfoDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/dto/RoomInfoDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/dto/RoomInfoDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/dto/RoomInfoDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/room_Info.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/room_Info.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/RoomInfoFormController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/RoomInfoFormController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +28,7 @@
       <list>
         <option value="FxmlFile" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -79,25 +86,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "Maven.Hotel-Reservation-System [clean,install].executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
-    "git-widget-placeholder": "dev",
-    "kotlin-language-version-configured": "true",
-    "onboarding.tips.debug.path": "D:/icd119/Standalone Application Development/week - 04(weekdays)/Hotel-Reservation-System/src/main/java/edu/icet/Main.java",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.Hotel-Reservation-System [clean,install].executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;dev&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;D:/icd119/Standalone Application Development/week - 04(weekdays)/Hotel-Reservation-System/src/main/java/edu/icet/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\icd119\Standalone Application Development\week - 04(weekdays)\Hotel-Reservation-System\src\main\resources\view" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
     </key>
@@ -184,7 +194,15 @@
       <option name="project" value="LOCAL" />
       <updated>1768366256087</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Implement RoomController and enhance RoomInfoFormController with CRUD operations for room management">
+      <option name="closed" value="true" />
+      <created>1768374616679</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1768374616679</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">

@@ -54,7 +54,7 @@ public class RoomInfoFormController implements Initializable {
 
     ObservableList <RoomInfoDTO> observableList = FXCollections.observableArrayList();
 
-    RoomController roomController  = new RoomController();
+    RoomInfoService roomInfoService  = new RoomController();
 
     @FXML
     void btnReloadOnAction(ActionEvent event) {
@@ -106,13 +106,13 @@ public class RoomInfoFormController implements Initializable {
         int floor = Integer.parseInt(String.valueOf(cmbFloor.getValue()));
         boolean availability = radioAvailable.isSelected();
 
-        roomController.updateRoom(roomId,roomType,description,pricePerNight,maxGuests,floor,availability);
+        roomInfoService.updateRoom(roomId,roomType,description,pricePerNight,maxGuests,floor,availability);
         loadDetails();
 
     }
 
     public void btnDeleteOnAction(ActionEvent actionEvent) {
-        roomController.deleteRoom(txtRoomID.getText());
+        roomInfoService.deleteRoom(txtRoomID.getText());
     }
 
     public void btnAddOnAction(ActionEvent actionEvent) {
@@ -126,11 +126,11 @@ public class RoomInfoFormController implements Initializable {
         int floor = Integer.parseInt(String.valueOf(cmbFloor.getValue()));
         boolean availability = radioAvailable.isSelected();
 
-        roomController.addRoomDetails(roomId,roomType,description,pricePerNight,maxGuests,floor,availability);
+        roomInfoService.addRoomDetails(roomId,roomType,description,pricePerNight,maxGuests,floor,availability);
     }
 
     private void loadDetails(){
-        observableList = roomController.getAllRooms();
-        tblRoomInfo.setItems(roomController.getAllRooms());
+        observableList = roomInfoService.getAllRooms();
+        tblRoomInfo.setItems(roomInfoService.getAllRooms());
     }
 }

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="613.0" prefWidth="937.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CustomerInfoFormController">
+    <children>
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="95.0" layoutY="-2.0" stroke="#ffffff00" strokeType="INSIDE" width="938.0" />
+        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="314.0" layoutY="22.0" prefHeight="30.0" prefWidth="310.0" text="Room Information">
+            <font>
+                <Font name="System Bold" size="31.0" />
+            </font>
+        </Label>
+        <TableView fx:id="tblRoomInfo" layoutX="12.0" layoutY="106.0" prefHeight="392.0" prefWidth="914.0">
+            <columns>
+                <TableColumn fx:id="colRoomId" prefWidth="75.0" text="Room Id" />
+                <TableColumn fx:id="colRoomType" prefWidth="105.60001373291016" text="Type" />
+                <TableColumn fx:id="colPricePerNight" prefWidth="114.4000244140625" text="Price Per Night" />
+                <TableColumn fx:id="colMaxGuests" prefWidth="79.20001220703125" text="Max Guests" />
+                <TableColumn fx:id="colAvailability" prefWidth="88.79998779296875" text="Availability" />
+                <TableColumn fx:id="colDescription" prefWidth="385.6000061035156" text="Description" />
+                <TableColumn fx:id="colFloor" prefWidth="62.4000244140625" text="Floor" />
+            </columns>
+        </TableView>
+        <JFXButton layoutX="796.0" layoutY="582.0" onAction="#btnReloadOnAction" prefHeight="26.0" prefWidth="127.0" text="RELOAD" />
+        <TextField fx:id="txtRoomID" layoutX="14.0" layoutY="504.0" promptText="Room ID" />
+        <ComboBox fx:id="cmbType" layoutX="14.0" layoutY="542.0" prefWidth="150.0" promptText="Type" />
+        <TextField fx:id="txtPricePerNight" layoutX="14.0" layoutY="579.0" promptText="Price Per Night" />
+        <JFXButton fx:id="btnUpdate" layoutX="796.0" layoutY="531.0" onAction="#btnUpdateOnAction" prefHeight="26.0" prefWidth="127.0" text="UPDATE" textFill="#3e5945" />
+        <JFXButton fx:id="btnDelete" layoutX="796.0" layoutY="553.0" onAction="#btnDeleteOnAction" prefHeight="26.0" prefWidth="127.0" text="DELETE" textFill="RED" />
+        <JFXButton fx:id="btnAdd" layoutX="796.0" layoutY="506.0" onAction="#btnAddOnAction" prefHeight="26.0" prefWidth="127.0" text="ADD" textFill="#403bcc" />
+        <ComboBox fx:id="cmbFloor" layoutX="350.0" layoutY="503.0" prefWidth="150.0" promptText="Floor" />
+        <ComboBox fx:id="cmbMaxGuests" layoutX="182.0" layoutY="503.0" prefWidth="150.0" promptText="Max Guests" />
+        <Label fx:id="lblAvailability" layoutX="274.0" layoutY="534.0" prefHeight="46.0" prefWidth="150.0" text="Availability">
+            <font>
+                <Font name="System Bold" size="24.0" />
+            </font>
+        </Label>
+        <RadioButton fx:id="radioAvailable" layoutX="222.0" layoutY="576.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="127.0" text="Available">
+            <font>
+                <Font size="13.0" />
+            </font>
+        </RadioButton>
+        <RadioButton fx:id="radioUnavailable" layoutX="361.0" layoutY="576.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="127.0" text="Unavailable">
+            <font>
+                <Font size="13.0" />
+            </font>
+        </RadioButton>
+        <TextArea fx:id="txtDescription" layoutX="518.0" layoutY="502.0" prefHeight="95.0" prefWidth="270.0" promptText="Description">
+            <font>
+                <Font size="16.0" />
+            </font>
+        </TextArea>
+    </children>
+</AnchorPane>
