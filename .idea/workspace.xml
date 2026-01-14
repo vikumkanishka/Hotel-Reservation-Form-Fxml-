@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0eb7261e-9c75-4742-b496-ac9a946c1487" name="Changes" comment="Enhance RoomInfo functionality with additional UI components and update XML configurations">
+    <list default="true" id="0eb7261e-9c75-4742-b496-ac9a946c1487" name="Changes" comment="Add radio button toggle group to RoomInfoFormController">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/RoomInfoFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/RoomInfoFormController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/RoomInfoFormController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/RoomInfoFormController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -145,13 +146,31 @@
       <option name="project" value="LOCAL" />
       <updated>1768341626952</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="add data to comboBox from the ObserverbleList">
+      <option name="closed" value="true" />
+      <created>1768342413621</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1768342413621</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Add radio button toggle group to RoomInfoFormController">
+      <option name="closed" value="true" />
+      <created>1768342545055</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1768342545055</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Add initial project structure XML configurations, and RoomInfo functionality" />
     <MESSAGE value="Enhance RoomInfo functionality with additional UI components and update XML configurations" />
-    <option name="LAST_COMMIT_MESSAGE" value="Enhance RoomInfo functionality with additional UI components and update XML configurations" />
+    <MESSAGE value="add data to comboBox from the ObserverbleList" />
+    <MESSAGE value="Add radio button toggle group to RoomInfoFormController" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add radio button toggle group to RoomInfoFormController" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>
