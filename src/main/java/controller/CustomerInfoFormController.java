@@ -1,17 +1,25 @@
 package controller;
 
 import com.jfoenix.controls.JFXButton;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
+import model.dto.CustomerInfoDTO;
 
-public class CustomerInfoFormController {
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class CustomerInfoFormController implements Initializable {
 
     @FXML
-    private TableColumn<?, ?> ColAddress;
+    private TableColumn<?, ?> colAddress;
 
     @FXML
     private JFXButton btnAdd;
@@ -47,7 +55,7 @@ public class CustomerInfoFormController {
     private DatePicker dtRegDate;
 
     @FXML
-    private TableView<?> tblCustomerInfo;
+    private TableView<CustomerInfoDTO> tblCustomerInfo;
 
     @FXML
     private TextField txtAddress;
@@ -70,6 +78,10 @@ public class CustomerInfoFormController {
     @FXML
     private TextField txtPhone;
 
+    ObservableList<CustomerInfoDTO> observableList= FXCollections.observableArrayList();
+
+    CustomerInfoService  customerInfoService = new CustomerController();
+
     @FXML
     void btnAddOnAction(ActionEvent event) {
 
@@ -90,5 +102,21 @@ public class CustomerInfoFormController {
 
     }
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        loadtable();
+        colCustomerId.setCellValueFactory(new PropertyValueFactory<>("customer_id"));
+        colCustomerFirstName.setCellValueFactory(new PropertyValueFactory<>("first_name"));
+        colCustomerLastName.setCellValueFactory(new PropertyValueFactory<>("last_name"));
+        colEmail.setCellValueFactory(new PropertyValueFactory<>("email"));
+        colPhone.setCellValueFactory(new PropertyValueFactory<>("phone"));
+        colAddress.setCellValueFactory(new PropertyValueFactory<>("address"));
+        colCity.setCellValueFactory(new PropertyValueFactory<>("city"));
+        colRegDate.setCellValueFactory(new PropertyValueFactory<>("registered_date"));
+    }
+
+    public void loadtable(){
+        tblCustomerInfo.setItems(customerInfoService.getAllCustomers());
+    }
 }
 

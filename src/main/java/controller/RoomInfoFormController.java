@@ -19,12 +19,8 @@ public class RoomInfoFormController implements Initializable {
     public TextField txtRoomID;
     public ComboBox cmbType;
     public TextField txtPricePerNight;
-    public JFXButton btnUpdate;
-    public JFXButton btnDelete;
-    public JFXButton btnAdd;
     public ComboBox cmbFloor;
     public ComboBox cmbMaxGuests;
-    public Label lblAvailability;
     public RadioButton radioAvailable;
     public RadioButton radioUnavailable;
     public TextArea txtDescription;
@@ -58,11 +54,11 @@ public class RoomInfoFormController implements Initializable {
 
     @FXML
     void btnReloadOnAction(ActionEvent event) {
-
-
-        tblRoomInfo.setItems(observableList);
         loadDetails();
+    }
 
+    private void loadDetails(){
+        tblRoomInfo.setItems(roomInfoService.getAllRooms());
     }
 
 
@@ -127,10 +123,5 @@ public class RoomInfoFormController implements Initializable {
         boolean availability = radioAvailable.isSelected();
 
         roomInfoService.addRoomDetails(roomId,roomType,description,pricePerNight,maxGuests,floor,availability);
-    }
-
-    private void loadDetails(){
-        observableList = roomInfoService.getAllRooms();
-        tblRoomInfo.setItems(roomInfoService.getAllRooms());
     }
 }

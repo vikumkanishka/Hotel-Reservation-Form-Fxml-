@@ -16,7 +16,7 @@ public class CustomerInfoDTO {
     private String first_name;
     private String last_name;
     private String email;
-    private int phone;
+    private String phone;
     private String address;
     private String city;
     private String registered_date;

@@ -4,24 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0eb7261e-9c75-4742-b496-ac9a946c1487" name="Changes" comment="Implement RoomController and enhance RoomInfoFormController with CRUD operations for room management">
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/CustomerController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/CustomerInfoFormController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/CustomerInfoService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/RoomInfoService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/dto/CustomerInfoDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/customer_Info.fxml" afterDir="false" />
+    <list default="true" id="0eb7261e-9c75-4742-b496-ac9a946c1487" name="Changes" comment="Add CustomerInfo form and controller with CRUD operations for customer management">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Starter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Starter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/RoomController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/RoomController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/CustomerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/CustomerInfoFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/CustomerInfoFormController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/RoomInfoFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/RoomInfoFormController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/dto/CustomerInfoDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/dto/CustomerInfoDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/customer_Info.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/customer_Info.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/view/room_Info.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/room_Info.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Starter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Starter.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/controller/RoomInfoFormController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/RoomInfoFormController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/room_Info.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/room_Info.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CopilotPersistence">
+    <persistenceIdMap>
+      <entry key="_D:/icd119/Standalone Application Development/week - 04(weekdays)/Hotel-Reservation-System" value="38D2mRWJx54U962orm5BxFy6lFG" />
+    </persistenceIdMap>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -97,6 +100,7 @@
     &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;dev&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/icd119/Standalone Application Development/week - 04(weekdays)/Hotel-Reservation-System&quot;,
     &quot;onboarding.tips.debug.path&quot;: &quot;D:/icd119/Standalone Application Development/week - 04(weekdays)/Hotel-Reservation-System/src/main/java/edu/icet/Main.java&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
@@ -202,7 +206,15 @@
       <option name="project" value="LOCAL" />
       <updated>1768374616679</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Add CustomerInfo form and controller with CRUD operations for customer management">
+      <option name="closed" value="true" />
+      <created>1768384387658</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1768384387658</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -212,7 +224,8 @@
     <MESSAGE value="Add radio button toggle group to RoomInfoFormController" />
     <MESSAGE value="Update workspace.xml to reflect recent changes in RoomInfoFormController and task management" />
     <MESSAGE value="Implement RoomController and enhance RoomInfoFormController with CRUD operations for room management" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implement RoomController and enhance RoomInfoFormController with CRUD operations for room management" />
+    <MESSAGE value="Add CustomerInfo form and controller with CRUD operations for customer management" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add CustomerInfo form and controller with CRUD operations for customer management" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>
