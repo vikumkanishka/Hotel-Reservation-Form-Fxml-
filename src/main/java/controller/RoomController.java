@@ -33,7 +33,6 @@ public class RoomController implements  RoomInfoService{
 
                 observableList.add(roomInfoDTO);
             }
-
             return observableList;
         } catch (SQLException e) {
             throw new RuntimeException(e);
