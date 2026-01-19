@@ -1,0 +1,60 @@
+package controller;
+
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import model.dto.CustomerInfoDTO;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+public class CustomerController implements CustomerInfoService{
+    @Override
+    public ObservableList<CustomerInfoDTO> getAllCustomers() {
+
+//        CustomerInfoService customerInfoService= new CustomerController();
+        ObservableList<CustomerInfoDTO> observableList= FXCollections.observableArrayList();
+
+        try {
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/hotel_reservation_system","root","200004602360");
+
+            ResultSet resultSet = connection.prepareStatement("SELECT * FROM Customers").executeQuery();
+
+            observableList.clear();
+
+            while (resultSet.next()){
+                String customerId = resultSet.getString("customer_id");
+                String customerName = resultSet.getString("first_name");
+                String lastName = resultSet.getString("last_name");
+                String email = resultSet.getString("email");
+                String phone = resultSet.getString("phone");
+                String address = resultSet.getString("address");
+                String city = resultSet.getString("city");
+                String date = resultSet.getString("registered_date");
+
+                CustomerInfoDTO customerInfoDTO = new CustomerInfoDTO(customerId,customerName,lastName,email,phone,address,city,date);
+
+                observableList.add(customerInfoDTO);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return observableList;
+    }
+
+    @Override
+    public void addCustomer(String customerId, String firstName, String lastName, String email, String phone, String Address, String city, String date) {
+
+    }
+
+    @Override
+    public void updateCustomer(String customerId, String firstName, String lastName, String email, String phone, String Address, String city, String date) {
+
+    }
+
+    @Override
+    public void deleteCustomer(String customerId) {
+
+    }
+}

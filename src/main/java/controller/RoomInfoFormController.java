@@ -1,24 +1,29 @@
 package controller;
 
+import com.jfoenix.controls.JFXButton;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import model.dto.RoomInfoDTO;
 
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ResourceBundle;
 
 public class RoomInfoFormController implements Initializable {
 
+    public TextField txtRoomID;
+    public ComboBox cmbType;
+    public TextField txtPricePerNight;
+    public ComboBox cmbFloor;
+    public ComboBox cmbMaxGuests;
+    public RadioButton radioAvailable;
+    public RadioButton radioUnavailable;
+    public TextArea txtDescription;
     @FXML
     private TableColumn<?, ?> colAvailability;
 
@@ -45,54 +50,78 @@ public class RoomInfoFormController implements Initializable {
 
     ObservableList <RoomInfoDTO> observableList = FXCollections.observableArrayList();
 
+    RoomInfoService roomInfoService  = new RoomController();
+
     @FXML
     void btnReloadOnAction(ActionEvent event) {
-
         loadDetails();
-
     }
 
     private void loadDetails(){
-        try {
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/hotel_reservation_system","root","200004602360");
-
-            ResultSet resultSet = connection.prepareStatement("SELECT * FROM rooms").executeQuery();
-
-            observableList.clear();
-
-            while (resultSet.next()){
-                String roomId = resultSet.getString("room_Id");
-                String roomType = resultSet.getString("type");
-                String description = resultSet.getString("description");
-                double pricePerNight = resultSet.getDouble("price_Per_Night");
-                int maxGuests = resultSet.getInt("max_Guests");
-                int floor = resultSet.getInt("floor");
-                boolean availability = resultSet.getBoolean("availability");
-
-                RoomInfoDTO roomInfoDTO = new RoomInfoDTO(roomId,roomType,description,pricePerNight,maxGuests,floor,availability);
-
-                observableList.add(roomInfoDTO);
-            }
-
-            colRoomId.setCellValueFactory(new PropertyValueFactory<>("roomId"));
-            colRoomType.setCellValueFactory(new PropertyValueFactory<>("roomType"));
-            colDescription.setCellValueFactory(new PropertyValueFactory<>("description"));
-            colPricePerNight.setCellValueFactory(new PropertyValueFactory<>("pricePerNight"));
-            colMaxGuests.setCellValueFactory(new PropertyValueFactory<>("maxGuests"));
-            colFloor.setCellValueFactory(new PropertyValueFactory<>("floor"));
-            colAvailability.setCellValueFactory(new PropertyValueFactory<>("availability"));
-
-            tblRoomInfo.setItems(observableList);
-
-
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+        tblRoomInfo.setItems(roomInfoService.getAllRooms());
     }
+
 
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
         loadDetails();
+
+        ObservableList <String> types= FXCollections.observableArrayList("Single","Double","Family","Suite");
+        cmbType.setItems(types);
+
+        ObservableList maxGuests= FXCollections.observableArrayList("1","2","3","4","5");
+        cmbMaxGuests.setItems(maxGuests);
+
+        ObservableList floors= FXCollections.observableArrayList("1","2","3","4","5","6");
+        cmbFloor.setItems(floors);
+
+        ToggleGroup toggleGroup = new ToggleGroup();
+        radioAvailable.setToggleGroup(toggleGroup);
+        radioUnavailable.setToggleGroup(toggleGroup);
+
+
+        colRoomId.setCellValueFactory(new PropertyValueFactory<>("roomId"));
+        colRoomType.setCellValueFactory(new PropertyValueFactory<>("roomType"));
+        colDescription.setCellValueFactory(new PropertyValueFactory<>("description"));
+        colPricePerNight.setCellValueFactory(new PropertyValueFactory<>("pricePerNight"));
+        colMaxGuests.setCellValueFactory(new PropertyValueFactory<>("maxGuests"));
+        colFloor.setCellValueFactory(new PropertyValueFactory<>("floor"));
+        colAvailability.setCellValueFactory(new PropertyValueFactory<>("availability"));
+
+
+    }
+
+    public void btnUpdateOnAction(ActionEvent actionEvent) {
+        String roomId = txtRoomID.getText();
+        String roomType = String.valueOf(cmbType.getValue());
+        String description = txtDescription.getText();
+        double pricePerNight = Double.parseDouble(txtPricePerNight.getText());
+        int maxGuests = Integer.parseInt(String.valueOf(cmbMaxGuests.getValue()));
+        int floor = Integer.parseInt(String.valueOf(cmbFloor.getValue()));
+        boolean availability = radioAvailable.isSelected();
+
+        roomInfoService.updateRoom(roomId,roomType,description,pricePerNight,maxGuests,floor,availability);
+        loadDetails();
+
+    }
+
+    public void btnDeleteOnAction(ActionEvent actionEvent) {
+        roomInfoService.deleteRoom(txtRoomID.getText());
+    }
+
+    public void btnAddOnAction(ActionEvent actionEvent) {
+        observableList.clear();
+
+        String roomId = txtRoomID.getText();
+        String roomType = String.valueOf(cmbType.getValue());
+        String description = txtDescription.getText();
+        double pricePerNight = Double.parseDouble(txtPricePerNight.getText());
+        int maxGuests = Integer.parseInt(String.valueOf(cmbMaxGuests.getValue()));
+        int floor = Integer.parseInt(String.valueOf(cmbFloor.getValue()));
+        boolean availability = radioAvailable.isSelected();
+
+        roomInfoService.addRoomDetails(roomId,roomType,description,pricePerNight,maxGuests,floor,availability);
     }
 }
