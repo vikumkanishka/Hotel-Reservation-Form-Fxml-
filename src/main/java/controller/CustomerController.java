@@ -72,5 +72,18 @@ public class CustomerController implements CustomerInfoService{
     @Override
     public void deleteCustomer(String customerId) {
 
+        try {
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/hotel_reservation_system","root","200004602360");
+
+            PreparedStatement preparedStatement = connection.prepareStatement("DELETE FROM customers WHERE customer_id = ?");
+
+            preparedStatement.setObject(1,customerId);
+
+            preparedStatement.executeUpdate();
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
     }
 }

@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0eb7261e-9c75-4742-b496-ac9a946c1487" name="Changes" comment="Add AutoLoad Table Functionalities">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="0eb7261e-9c75-4742-b496-ac9a946c1487" name="Changes" comment="Implement customer addition functionality in CustomerController and update CustomerInfoFormController to handle user input">
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/CustomerController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/CustomerInfoFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/CustomerInfoFormController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/RoomController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/RoomController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/RoomInfoFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/RoomInfoFormController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/RoomInfoFormController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/RoomInfoFormController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -218,7 +214,15 @@
       <option name="project" value="LOCAL" />
       <updated>1768820043512</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Implement customer addition functionality in CustomerController and update CustomerInfoFormController to handle user input">
+      <option name="closed" value="true" />
+      <created>1768828674274</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1768828674274</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -230,7 +234,8 @@
     <MESSAGE value="Implement RoomController and enhance RoomInfoFormController with CRUD operations for room management" />
     <MESSAGE value="Add CustomerInfo form and controller with CRUD operations for customer management" />
     <MESSAGE value="Add AutoLoad Table Functionalities" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add AutoLoad Table Functionalities" />
+    <MESSAGE value="Implement customer addition functionality in CustomerController and update CustomerInfoFormController to handle user input" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implement customer addition functionality in CustomerController and update CustomerInfoFormController to handle user input" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>

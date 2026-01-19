@@ -103,7 +103,8 @@ public class CustomerInfoFormController implements Initializable {
 
     @FXML
     void btnDeleteOnAction(ActionEvent event) {
-
+        customerInfoService.deleteCustomer(txtCustomerId.getText());
+        loadtable();
     }
 
     @FXML
