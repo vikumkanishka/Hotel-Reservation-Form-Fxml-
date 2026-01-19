@@ -85,6 +85,20 @@ public class CustomerInfoFormController implements Initializable {
     @FXML
     void btnAddOnAction(ActionEvent event) {
 
+        observableList.clear();
+
+        String customerId = txtCustomerId.getText();
+        String customerFirstName = txtCustomerFirstName.getText();
+        String customerLastName = txtCustomerLastName.getText();
+        String email = txtEmail.getText();
+        String phone = txtPhone.getText();
+        String address = txtAddress.getText();
+        String city =  txtCity.getText();
+        String date = String.valueOf(dtRegDate.getValue());
+
+        customerInfoService.addCustomer(customerId,customerFirstName,customerLastName,email,phone,address,city,date);
+
+        loadtable();
     }
 
     @FXML

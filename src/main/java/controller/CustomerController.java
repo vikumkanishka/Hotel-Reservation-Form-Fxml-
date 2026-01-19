@@ -4,10 +4,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import model.dto.CustomerInfoDTO;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 
 public class CustomerController implements CustomerInfoService{
     @Override
@@ -46,6 +43,25 @@ public class CustomerController implements CustomerInfoService{
     @Override
     public void addCustomer(String customerId, String firstName, String lastName, String email, String phone, String Address, String city, String date) {
 
+        try {
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/hotel_reservation_system","root","200004602360");
+
+            PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO customers VALUES(?,?,?,?,?,?,?,?)");
+
+            preparedStatement.setObject(1,customerId);
+            preparedStatement.setObject(2,firstName);
+            preparedStatement.setObject(3,lastName);
+            preparedStatement.setObject(4,email);
+            preparedStatement.setObject(5,phone);
+            preparedStatement.setObject(6,Address);
+            preparedStatement.setObject(7,city);
+            preparedStatement.setObject(8,date);
+
+            preparedStatement.execute();
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Override

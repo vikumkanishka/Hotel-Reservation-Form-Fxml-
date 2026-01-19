@@ -89,8 +89,6 @@ public class RoomInfoFormController implements Initializable {
         colMaxGuests.setCellValueFactory(new PropertyValueFactory<>("maxGuests"));
         colFloor.setCellValueFactory(new PropertyValueFactory<>("floor"));
         colAvailability.setCellValueFactory(new PropertyValueFactory<>("availability"));
-
-
     }
 
     public void btnUpdateOnAction(ActionEvent actionEvent) {
