@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0eb7261e-9c75-4742-b496-ac9a946c1487" name="Changes" comment="Implement customer addition functionality in CustomerController and update CustomerInfoFormController to handle user input">
+    <list default="true" id="0eb7261e-9c75-4742-b496-ac9a946c1487" name="Changes" comment="Implement delete customer functionality in CustomerController">
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/CustomerController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/CustomerInfoFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/CustomerInfoFormController.java" afterDir="false" />
     </list>
@@ -222,7 +222,15 @@
       <option name="project" value="LOCAL" />
       <updated>1768828674274</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Implement delete customer functionality in CustomerController">
+      <option name="closed" value="true" />
+      <created>1768829321860</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1768829321860</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -235,7 +243,8 @@
     <MESSAGE value="Add CustomerInfo form and controller with CRUD operations for customer management" />
     <MESSAGE value="Add AutoLoad Table Functionalities" />
     <MESSAGE value="Implement customer addition functionality in CustomerController and update CustomerInfoFormController to handle user input" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implement customer addition functionality in CustomerController and update CustomerInfoFormController to handle user input" />
+    <MESSAGE value="Implement delete customer functionality in CustomerController" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implement delete customer functionality in CustomerController" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>

@@ -14,6 +14,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import model.dto.CustomerInfoDTO;
 
 import java.net.URL;
+import java.time.LocalDate;
 import java.util.ResourceBundle;
 
 public class CustomerInfoFormController implements Initializable {
@@ -109,12 +110,22 @@ public class CustomerInfoFormController implements Initializable {
 
     @FXML
     void btnReloadOnAction(ActionEvent event) {
-
+        loadtable();
     }
 
     @FXML
     void btnUpdateOnAction(ActionEvent event) {
 
+        String customerId = txtCustomerId.getText();
+        String customerFirstName = txtCustomerFirstName.getText();
+        String customerLastName = txtCustomerLastName.getText();
+        String email = txtEmail.getText();
+        String phone = txtPhone.getText();
+        String address = txtAddress.getText();
+        String city = txtCity.getText();
+        String regDate = String.valueOf(dtRegDate.getValue());
+
+        customerInfoService.updateCustomer(customerId,customerFirstName,customerLastName,email,phone,address,city,regDate);
     }
 
     @Override

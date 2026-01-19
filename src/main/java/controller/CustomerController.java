@@ -67,6 +67,15 @@ public class CustomerController implements CustomerInfoService{
     @Override
     public void updateCustomer(String customerId, String firstName, String lastName, String email, String phone, String Address, String city, String date) {
 
+        try {
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/hotel_reservation_system","root","200004602360");
+
+            PreparedStatement preparedStatement = connection.prepareStatement("UPDATE customers SET ?,?,?,?,?,?,?,? WHERE customer_id = ?");
+
+            preparedStatement.setObject(1,firstName);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Override
