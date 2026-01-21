@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0eb7261e-9c75-4742-b496-ac9a946c1487" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/db/DbConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="0eb7261e-9c75-4742-b496-ac9a946c1487" name="Changes" comment="Refactor CustomerController to use DbConnection for database connections">
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/CustomerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/db/DbConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/db/DbConnection.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -238,7 +238,23 @@
       <option name="project" value="LOCAL" />
       <updated>1768845478731</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Add DbConnection class for database connection management">
+      <option name="closed" value="true" />
+      <created>1768971431696</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1768971431696</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Refactor CustomerController to use DbConnection for database connections">
+      <option name="closed" value="true" />
+      <created>1768971607041</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1768971607041</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -253,7 +269,9 @@
     <MESSAGE value="Implement customer addition functionality in CustomerController and update CustomerInfoFormController to handle user input" />
     <MESSAGE value="Implement delete customer functionality in CustomerController" />
     <MESSAGE value="Implement customer update functionality in CustomerController and enhance CustomerInfoFormController to handle user input" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implement customer update functionality in CustomerController and enhance CustomerInfoFormController to handle user input" />
+    <MESSAGE value="Add DbConnection class for database connection management" />
+    <MESSAGE value="Refactor CustomerController to use DbConnection for database connections" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor CustomerController to use DbConnection for database connections" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>

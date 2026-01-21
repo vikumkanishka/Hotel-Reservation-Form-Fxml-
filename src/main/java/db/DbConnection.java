@@ -12,7 +12,7 @@ public class DbConnection {
 
     private DbConnection() throws SQLException {
 
-        connection=DriverManager.getConnection("jdbc/mysql://localhost:3306/hotel_reservation_System","root","200004602360");
+        connection=DriverManager.getConnection("jdbc:mysql://localhost:3306/hotel_reservation_System","root","200004602360");
     }
 
     public static DbConnection getInstance() throws SQLException {
