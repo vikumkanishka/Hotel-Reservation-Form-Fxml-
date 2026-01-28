@@ -1,6 +1,5 @@
 package controller;
 
-import com.jfoenix.controls.JFXButton;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -9,9 +8,10 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import model.dto.RoomInfoDTO;
+import service.RoomServiceImpl;
+import service.RoomInfoService;
 
 import java.net.URL;
-import java.sql.*;
 import java.util.ResourceBundle;
 
 public class RoomInfoFormController implements Initializable {
@@ -50,7 +50,7 @@ public class RoomInfoFormController implements Initializable {
 
     ObservableList <RoomInfoDTO> observableList = FXCollections.observableArrayList();
 
-    RoomInfoService roomInfoService  = new RoomController();
+    RoomInfoService roomInfoService  = new RoomServiceImpl();
 
     @FXML
     void btnReloadOnAction(ActionEvent event) {

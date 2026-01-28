@@ -1,4 +1,4 @@
-package controller;
+package service;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -6,7 +6,7 @@ import model.dto.RoomInfoDTO;
 
 import java.sql.*;
 
-public class RoomController implements  RoomInfoService{
+public class RoomServiceImpl implements RoomInfoService {
 
     @Override
     public ObservableList<RoomInfoDTO> getAllRooms() {
