@@ -12,9 +12,10 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import model.dto.CustomerInfoDTO;
+import service.CustomerServiceImpl;
+import service.CustomerInfoService;
 
 import java.net.URL;
-import java.time.LocalDate;
 import java.util.ResourceBundle;
 
 public class CustomerInfoFormController implements Initializable {
@@ -81,7 +82,7 @@ public class CustomerInfoFormController implements Initializable {
 
     ObservableList<CustomerInfoDTO> observableList= FXCollections.observableArrayList();
 
-    CustomerInfoService  customerInfoService = new CustomerController();
+    CustomerInfoService customerInfoService = new CustomerServiceImpl();
 
     @FXML
     void btnAddOnAction(ActionEvent event) {

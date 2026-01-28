@@ -1,12 +1,13 @@
-package controller;
+package service;
 
+import db.DbConnection;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import model.dto.CustomerInfoDTO;
 
 import java.sql.*;
 
-public class CustomerController implements CustomerInfoService{
+public class CustomerServiceImpl implements CustomerInfoService {
     @Override
     public ObservableList<CustomerInfoDTO> getAllCustomers() {
 
@@ -14,7 +15,7 @@ public class CustomerController implements CustomerInfoService{
         ObservableList<CustomerInfoDTO> observableList= FXCollections.observableArrayList();
 
         try {
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/hotel_reservation_system","root","200004602360");
+            Connection connection = DbConnection.getInstance().getConnection();
 
             ResultSet resultSet = connection.prepareStatement("SELECT * FROM Customers").executeQuery();
 
@@ -44,7 +45,7 @@ public class CustomerController implements CustomerInfoService{
     public void addCustomer(String customerId, String firstName, String lastName, String email, String phone, String Address, String city, String date) {
 
         try {
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/hotel_reservation_system","root","200004602360");
+            Connection connection = DbConnection.getInstance().getConnection();
 
             PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO customers VALUES(?,?,?,?,?,?,?,?)");
 
@@ -68,7 +69,7 @@ public class CustomerController implements CustomerInfoService{
     public void updateCustomer(String customerId, String firstName, String lastName, String email, String phone, String Address, String city, String date) {
 
         try {
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/hotel_reservation_system","root","200004602360");
+            Connection connection = DbConnection.getInstance().getConnection();
 
             PreparedStatement preparedStatement = connection.prepareStatement("UPDATE customers SET ?,?,?,?,?,?,?,? WHERE customer_id = ?");
 
@@ -82,8 +83,7 @@ public class CustomerController implements CustomerInfoService{
     public void deleteCustomer(String customerId) {
 
         try {
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/hotel_reservation_system","root","200004602360");
-
+            Connection connection = DbConnection.getInstance().getConnection();
             PreparedStatement preparedStatement = connection.prepareStatement("DELETE FROM customers WHERE customer_id = ?");
 
             preparedStatement.setObject(1,customerId);
