@@ -1,4 +1,4 @@
-package controller;
+package service;
 
 import db.DbConnection;
 import javafx.collections.FXCollections;
@@ -7,7 +7,7 @@ import model.dto.CustomerInfoDTO;
 
 import java.sql.*;
 
-public class CustomerController implements CustomerInfoService{
+public class CustomerServiceImpl implements CustomerInfoService {
     @Override
     public ObservableList<CustomerInfoDTO> getAllCustomers() {
 

@@ -1,4 +1,4 @@
-package controller;
+package service;
 
 import javafx.collections.ObservableList;
 import model.dto.CustomerInfoDTO;
