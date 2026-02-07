@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0eb7261e-9c75-4742-b496-ac9a946c1487" name="Changes" comment="Add Dashboard.fxml and DashboardController for main application interface">
-      <change afterPath="$PROJECT_DIR$/src/main/java/repository/CustomerRepository.java" afterDir="false" />
+    <list default="true" id="0eb7261e-9c75-4742-b496-ac9a946c1487" name="Changes" comment="Refactor Room-related classes and update RoomInfoService implementation">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/CustomerServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/CustomerInfoFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/CustomerInfoFormController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/CustomerInfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/CustomerInfoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/DashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/DashboardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/RoomServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/RoomServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/room_Info.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/room_Info.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -274,7 +272,23 @@
       <option name="project" value="LOCAL" />
       <updated>1768973914823</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Refactor Customer-related classes and introduce CustomerRepository interface&#10;(Converting to Layerd Architecture)">
+      <option name="closed" value="true" />
+      <created>1769624003614</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1769624003614</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Refactor Room-related classes and update RoomInfoService implementation">
+      <option name="closed" value="true" />
+      <created>1769624148830</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1769624148830</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -293,7 +307,10 @@
     <MESSAGE value="Refactor CustomerController to use DbConnection for database connections" />
     <MESSAGE value="Fix JDBC URL format in DbConnection" />
     <MESSAGE value="Add Dashboard.fxml and DashboardController for main application interface" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Dashboard.fxml and DashboardController for main application interface" />
+    <MESSAGE value="Refactor Customer-related classes and introduce CustomerRepository interface&#10;(Converting Layerd Architecture)" />
+    <MESSAGE value="Refactor Customer-related classes and introduce CustomerRepository interface&#10;(Converting to Layerd Architecture)" />
+    <MESSAGE value="Refactor Room-related classes and update RoomInfoService implementation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor Room-related classes and update RoomInfoService implementation" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>

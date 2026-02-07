@@ -24,5 +24,14 @@ public class DashboardController {
     }
 
     public void btnRoomInfoOnAction(ActionEvent actionEvent) {
+        Stage oldStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+
+        try {
+            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/room_Info.fxml"))));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        oldStage.close();
+        stage.show();
     }
 }
