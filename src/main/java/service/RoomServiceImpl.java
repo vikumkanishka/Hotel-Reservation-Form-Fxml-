@@ -84,15 +84,15 @@ public class RoomServiceImpl implements RoomInfoService {
         try {
             Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/hotel_reservation_system", "root", "200004602360");
 
-            PreparedStatement preparedStatement = connection.prepareStatement("UPDATE rooms SET type = ?, price_per_night = ?, max_guests = ?, availability = ?, description = ?, floor = ? WHERE room_id = ?");
+            PreparedStatement preparedStatement = connection.prepareStatement("UPDATE rooms SET type = ?, price_per_night = ?, description = ?, max_guests = ?, availability = ?, floor = ? WHERE room_id = ?");
 
 
             preparedStatement.setObject(1,roomType);
-            preparedStatement.setObject(5,description);
+            preparedStatement.setObject(3,description);
             preparedStatement.setObject(2,pricePerNight);
-            preparedStatement.setObject(3,maxGuests);
+            preparedStatement.setObject(4,maxGuests);
             preparedStatement.setObject(6,floor);
-            preparedStatement.setObject(4,availability);
+            preparedStatement.setObject(5,availability);
             preparedStatement.setObject(7,roomId);
 
             preparedStatement.executeUpdate();
